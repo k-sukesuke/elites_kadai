@@ -10,16 +10,15 @@ if ($m > 0 && $n > 2) {
     $len_n = mb_strlen($str_n);
     $number = array_fill (0, $n - $len_n, "0");
 
-    print_r($number);
-    print_r($str_n);
-    print_r($len_n);
-
     for ($j=0 ; $j < $len_n ; $j++) {
         $number[] = mb_substr($str_n, $j, 1, "UTF-8");
     }
 
-    print_r ($number);
+    echo "// m = " . $m . ", n = " . $n . " のとき ";
 
+    foreach ($number as $num) {
+        echo "{$num}";
+    }
 
 } else {
     echo "数値に誤りがあります。";
